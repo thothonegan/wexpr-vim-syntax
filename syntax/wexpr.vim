@@ -16,9 +16,6 @@ syntax region wexprString start=/\v"/ skip=/\v\\./ end=/\v\"/
 syntax region wexprBinaryString start=/\v\</ end=/\v\>/
 syntax match wexprBareword /\v[a-zA-Z_0-9]+[a-zA-Z0-9_\.]*/
 
-"[^\*\"#@\(\);\[\]\^<>\r\n \t]+"
-"syntax region wexprArray start="#(" end=")" contains=@Spell
-
 syntax keyword wexprSymbols (
 syntax keyword wexprBoolean true false
 syntax keyword wexprNull null nil
@@ -28,8 +25,6 @@ syntax region wexprReferenceDeclaration start="\[" end="\]" contains=@Spell
 " Syntax: Braces
 syn region wexprFold matchgroup=wexprRegion start="#(" end=")" transparent fold
 syn region wexprFold matchgroup=wexprRegion start="@(" end=")" transparent fold
-
-"/\v([^<>"*#@\(\);\[\]]|[^[:blank:]])+/
 
 " Highlights
 highlight link wexprCommentTodo Todo
